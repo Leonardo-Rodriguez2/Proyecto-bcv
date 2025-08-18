@@ -1,0 +1,27 @@
+    <!-- Encabezado de la tienda -->
+    <header class="header">
+        <div class="container">
+            <h1 class="header-title">
+                Bodegón El Morocho
+            </h1>
+        </div>
+    </header>
+
+    <!-- Sección principal del contenido -->
+    <main class="main-content">
+        <!-- Sección de Tasa de Cambio del Día -->
+        <section class="exchange-rate-section">
+            <!-- Tarjeta para el precio del dólar -->
+            <div class="exchange-rate-card">
+                <h2>
+                    <i class="fas fa-dollar-sign"></i>Cambio al BCV
+                </h2>
+                <div class="price">
+                    Bs. {{dolarValue}}
+                </div>
+                <p class="update-info">
+                   {{getFechaHoraActual()}}
+                </p>
+            </div>
+        </section>
+    </main>
