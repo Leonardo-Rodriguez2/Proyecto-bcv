@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Roboto:wght@400;500;700&display=swap');
+
+/* Estilo para un efecto de sombra más sutil y elegante */
+.shadow-custom {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos de la Sección de Tasa de Cambio del Día */
+.exchange-rate-section {
+    padding: 6rem 1.5rem; /* Ajuste del padding para mayor espacio */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh; /* Altura mínima para centrar el contenido verticalmente */
+}
+
+.exchange-rate-card {
+    background: linear-gradient(145deg, #f8f8f8, #ffffff); /* Degradado sutil en el fondo */
+    padding: 3rem; /* Más padding para una sensación premium */
+    border-radius: 2rem;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra personalizada */
+    border-top: 10px solid #8b4513; /* Borde más grueso y en armonía con el header */
+    text-align: center;
+    max-width: 40rem; /* Aumenta el ancho máximo para una mejor presentación */
+    margin-top: -5rem; /* El desplazamiento hacia arriba es ahora más pronunciado */
+    transform: translateY(-5rem);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Transición para un efecto hover */
+}
+
+.exchange-rate-card h2 {
+    font-size: 2.5rem; /* Un tamaño más grande para el título */
+    font-weight: 700;
+    font-family: 'Playfair Display', serif; /* Misma fuente que en el header */
+    color: #4b3425; /* Un marrón oscuro para la tipografía */
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.exchange-rate-card h2 i {
+    color: #b91c1c; /* Color rojo para el ícono */
+    margin-right: 0.75rem;
+}
+
+.exchange-rate-card .price {
+    font-size: 5rem; /* El valor del precio es el más importante, lo destacamos */
+    font-weight: 900;
+    color: #b91c1c; /* Mantuvimos el color rojo */
+    font-family: 'Roboto', sans-serif; /* Fuente moderna y legible */
+    margin-bottom: 1rem;
+    line-height: 1;
+}
+
+.exchange-rate-card .update-info {
+    font-size: 1rem;
+    color: #7a7a7a; /* Color gris oscuro */
+    font-style: italic;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 1rem;
+}
+
+/* Keyframes para una animación de pulso más suave */
+@keyframes pulse-subtle {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.02);
+        opacity: 0.8;
+    }
+}
+.exchange-rate-card .price {
+    animation: pulse-subtle 2s ease-in-out infinite;
+}
+
+@media (min-width: 768px) {
+    .exchange-rate-card h2 {
+        font-size: 3rem;
+    }
+    .exchange-rate-card .price {
+        font-size: 6rem;
+    }
+}
