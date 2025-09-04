@@ -5,7 +5,7 @@ import { MainComponent } from './components/main/main.component';
 
 @Component({
   selector: 'app-root',
-  imports: [HeaderComponent, MainComponent],
+  imports: [ MainComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
@@ -15,8 +15,11 @@ export class AppComponent {
   public dolarValue: number = 0;
   public fechaActualizacion: string = ''
 
+  public api = "https://ve.dolarapi.com/v1/dolares/oficial";
+
   constructor(private ApiDolarService: ApiDolarService) {
-    this.ApiDolarService.getDolar().subscribe({
+    
+    this.ApiDolarService.getDolar(this.api).subscribe({
       next: (data: any) => {
         this.dolarData = data;
         console.log('Datos del dólar obtenidos:', data);
@@ -37,16 +40,5 @@ export class AppComponent {
     }, 10800000);
   }
 
-
-  getFechaHoraActual(): string {
-  const ahora = new Date();
-  const dia = ahora.getDate().toString().padStart(2, '0');
-  const mes = (ahora.getMonth() + 1).toString().padStart(2, '0');
-  const anio = ahora.getFullYear();
-  const horas = ahora.getHours().toString().padStart(2, '0');
-  const minutos = ahora.getMinutes().toString().padStart(2, '0');
-  const segundos = ahora.getSeconds().toString().padStart(2, '0');
-  return `${dia}/${mes}/${anio}`;
-}
 
 }

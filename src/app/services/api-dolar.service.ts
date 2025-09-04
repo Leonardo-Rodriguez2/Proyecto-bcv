@@ -7,11 +7,10 @@ import { Observable } from 'rxjs';
 })
 export class ApiDolarService {
 
-  public API_URL = "https://ve.dolarapi.com/v1/dolares/oficial";
   readonly http = inject(HttpClient)
 
-  getDolar(): Observable<any> {
-    return this.http.get(this.API_URL);
+  getDolar(api: any): Observable<any> {
+    return this.http.get(api);
   }
 
 }
