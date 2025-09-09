@@ -1,19 +1,20 @@
 import { Component, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { SectionOptionComponent } from '../section.option/section.option.component';
 
 @Component({
   selector: 'app-main',
-  imports: [FormsModule],
+  imports: [FormsModule, SectionOptionComponent],
   templateUrl: './main.component.html',
   styleUrl: './main.component.css',
 })
-export class MainComponent {
+export class MainComponent { 
+
   @Input() dolarValue: number | null = null;
 
   public valueDolar: number | null = null;
 
-
-  // funcion para convertir en valor del dolar en la moneda elegida
+  // funcion que calcula el valor del Input con el valor del Dolar
 
   convertir(): any {
     if (
@@ -25,7 +26,7 @@ export class MainComponent {
     }
   }
 
-  // funcion de devuelve la fecha actual
+  // funcion que devuelve la fecha actual
 
   getFechaHoraActual(): string {
     const ahora = new Date();

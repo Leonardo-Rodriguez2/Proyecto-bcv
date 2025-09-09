@@ -10,7 +10,6 @@ import { MainComponent } from './components/main/main.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'bcv-dolar';
   dolarData: any;
   public dolarValue: number = 0;
   public fechaActualizacion: string = ''
@@ -31,10 +30,12 @@ export class AppComponent {
       }
     });
 
-    this.recargarCada6Horas();
+    this.recargarPagina();
   }
 
-  recargarCada6Horas() {
+  // Funcion para realizar una recargar de la pagina cada 6 horas para refrescar el valor del dolar
+
+  recargarPagina() {
     setTimeout(() => {
       window.location.reload();
     }, 10800000);
